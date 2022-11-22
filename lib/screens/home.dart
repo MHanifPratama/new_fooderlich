@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../api/get_recipe.dart';
 import 'explore_screen.dart';
 import 'grocery_screen.dart';
 import 'recipes_screen.dart';
-
+// import 'api/get_recipe.dart';
 import 'package:provider/provider.dart';
 import '../models/models.dart';
 
@@ -45,6 +46,11 @@ class HomeState extends State<Home> {
       });
     }
   }
+  // @override
+  // void initstate() {
+  //   super.initState();
+  //   getCurrentIndex();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -67,6 +73,7 @@ class HomeState extends State<Home> {
         // currentIndex: widget.currentTab,
         currentIndex: _selectedIndex,
         onTap: (index) {
+          // GetRecipe.getRecipes();
           setState(() {
             _selectedIndex = index;
           });
