@@ -20,7 +20,7 @@ class RecipeThumbnail extends StatelessWidget {
           Expanded(
             child: ClipRRect(
               borderRadius: BorderRadius.circular(12),
-              child: Image.asset(
+              child: Image.network(
                 recipe.dishImage,
                 fit: BoxFit.cover,
               ),
@@ -35,6 +35,16 @@ class RecipeThumbnail extends StatelessWidget {
           Text(
             recipe.duration,
             style: Theme.of(context).textTheme.bodyText1,
+          ),
+          IconButton(
+            icon: Icon(Icons.favorite_border),
+            iconSize: 30,
+            color: Colors.red[400],
+            onPressed: () {
+              // setState(() {
+              //   _isFavorited = !_isFavorited;
+              // });
+            },
           ),
         ],
       ),

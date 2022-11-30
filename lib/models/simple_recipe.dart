@@ -25,4 +25,27 @@ class SimpleRecipe {
       information: json['information'].cast<String>() as List<String>,
     );
   }
+  Map<String, dynamic> toMap() {
+    var map = Map<String, dynamic>();
+    if (id != null) {
+      map['id'] = id;
+      map['dishImage'] = dishImage;
+      map['title'] = title;
+      map['duration'] = duration;
+      map['source'] = source;
+      map['information'] = information;
+    }
+    return map;
+  }
+
+  factory SimpleRecipe.fromMap(Map<String, dynamic> map) {
+    return SimpleRecipe(
+    id : map['id'],
+    dishImage : map['dishImage'],
+    title : map['title'],
+    duration : map['duration'],
+    source : map['source'],
+    information : map['information'],
+    );
+  }
 }
